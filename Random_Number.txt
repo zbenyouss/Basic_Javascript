@@ -1,0 +1,42 @@
+
+import java.util.Scanner;  
+import java.util.Random;
+
+class Main {
+    
+  public static void main(String[] args) {
+    Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+    System.out.println("Enter a number");
+
+    String input = myObj.nextLine();  // Read user input
+    System.out.println("The number you entered: " + input);  // Output user input
+    
+    Random random = new Random();
+
+    int returnValue = random.Next(1, 100);
+    int Guess = 0;
+bool correct = false;
+
+System.out.println("I'm thinking of a number between 1 and 100.");
+
+while (!correct)
+{
+   // Console.Write("Guess: ");
+   // string input = Console.ReadLine();
+
+    if (guess < val)
+    {
+        System.out.println("No, the number I'm thinking is higher than that number.");
+    }
+    else if (guess > val)
+    {
+        System.out.println("No, the number I'm thinking is lower than that number.");
+    }
+    else
+    {
+        correct = true;
+        System.out.println("You guessed right!");
+    }
+}
+}
+}

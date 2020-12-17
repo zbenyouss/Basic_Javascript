@@ -1,0 +1,111 @@
+
+import java.io.*;
+import java.util.*;
+import java.util.Scanner;
+
+public class Main
+{ 
+    
+  public static void main(String[] args) 
+    { 
+      Scanner scan = new Scanner(System.in);
+      Scanner scan1 = new Scanner(System.in);
+      Scanner scan2 = new Scanner(System.in);
+      	System.out.print("Enter name of first item: ");
+	    String name = scan.nextLine();
+		System.out.print("Enter how many " + name + " :" );
+		int quantity = scan.nextInt();
+	
+		
+	   	System.out.print("Enter name of second item: ");
+	    String name1 = scan1.nextLine();
+	    
+		System.out.print("Enter how many " + name1 + " :");
+		int quantity1 = scan1.nextInt();
+		
+		System.out.print("Enter name of Third item: ");
+		String name2 = scan2.nextLine();
+		
+		System.out.print("Enter how many " + name2 + " : ");
+		int quantity2 = scan2.nextInt();
+		
+        System.out.println("Creating GroceryList");
+        GroceryList g;
+        g = new GroceryList();
+		System.out.println("Creating new GroceryItemOrder");
+		GroceryItemOrder go ;
+		go = new GroceryItemOrder(name, quantity, 4);
+		g.add( go );
+		GroceryItemOrder go1 ;
+		go1 = new GroceryItemOrder(name1, quantity1, 3);
+		g.add(go1);
+		GroceryItemOrder go2 ;
+		go2 = new GroceryItemOrder(name2, quantity2, 2);
+        System.out.println("Adding GroceryItemOrder to GroceryList");
+		g.add(go2);
+		System.out.println("The total cost of bread is    " + go.getCost() );
+		System.out.println("The total cost of Tissues is  " + go1.getCost() );
+		System.out.println("The total cost of milk is     " + go2.getCost() );
+		System.out.println("The total cost of your groceries is " + g.getTotalCost() );
+		
+        }
+   }
+
+
+
+class GroceryItemOrder
+{
+	String name;         
+	int quantity;       
+	double pricePerUnit; 
+
+	public GroceryItemOrder(String name, int quantity, double pricePerUnit) {
+
+		this.quantity = quantity;
+		this.name = name;
+		this.pricePerUnit = pricePerUnit;
+	}
+
+
+	public double getCost() {
+		return this.quantity * this.pricePerUnit;
+	}
+
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+}
+
+
+
+
+
+
+
+class GroceryList {
+
+int groceries_index; 
+GroceryItemOrder[] groceries;
+
+    
+	public GroceryList() {
+		groceries = new GroceryItemOrder[10];
+		groceries_index = 0;
+	}
+
+	public void add(GroceryItemOrder item) {
+		this.groceries[groceries_index] = item;
+		groceries_index++;
+	}
+
+	public double getTotalCost() {
+		double totalCost = 0;
+		for (int i = 0; i < this.groceries_index; i++) {
+			totalCost += this.groceries[i].getCost();
+		}
+		return totalCost;
+	}
+}
+  
+

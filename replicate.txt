@@ -1,0 +1,18 @@
+import java.util.Scanner;
+public class repl 
+{
+	public static void main(String[] args) 
+	{
+		Scanner console = new Scanner(System.in); // use scanner utility
+		System.out.print("Please enter a word "); // print statement
+		String word = console.nextLine();			// save next input in word as string
+		System.out.print("Please enter a Number between 1-10 "); // print statement
+		int count = console.nextInt(); 	// save next input in word as int
+		for (int i=0; i<count;i++)   //
+		{	
+			System.out.print(word);
+			System.out.print(" ");
+		}
+
+}
+}

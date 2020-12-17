@@ -1,0 +1,79 @@
+import java.util.Scanner;
+
+public class Payroll {
+	
+	static String name;
+	static int idNumber;
+	static double rate;
+	static double hours;
+	private static Scanner keyboard;
+
+	public static void main(String[] args) 
+	{
+		keyboard = new Scanner(System.in);
+		System.out.print("Enter employee's name: ");
+		name = keyboard.nextLine();
+		System.out.print("Enter employee's ID number: ");
+		idNumber = keyboard.nextInt();
+		System.out.print("Enter hourly rate ");
+		rate = keyboard.nextDouble();
+		System.out.print("Enter number of hours worked: ");
+		hours = keyboard.nextDouble();
+		System.out.print(name + ", employee number " + idNumber + ", made ");
+		System.out.printf("$%.2f.%n", Payroll.getGrossPay());
+		
+	}
+
+	
+	
+	public Payroll(String Inputname, int id, double Hrate, double Whours)
+	{
+		name = Inputname;
+	}
+
+	public void setName(String Inputname)
+	{
+		name = Inputname;
+	}
+	
+	public String getname()
+	{
+		return name;
+	}
+	
+	public void setIDnumber(int id)
+	{
+		idNumber = id;
+	}
+	
+	public int getIDnumber()
+	{
+		return idNumber;
+	}
+	
+	public void setRate(double hRate)
+	{
+		rate =hRate;
+	}
+	
+	public double getRate()
+	{
+		return rate;
+	}
+	
+	public void setHours(double whours)
+	{
+		hours =whours;
+	}
+	
+	public double getHours()
+	{
+		return hours;
+	}
+	
+	public static double getGrossPay()
+	{
+		return rate * hours;
+	}
+	
+}

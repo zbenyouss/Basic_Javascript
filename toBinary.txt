@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class toBinary 
+{
+	 public void convertBinary(int num)
+	 {
+	     int binary[] = new int[40]; 		// setup array size
+	     int index = 0; 					// start index from 0
+	     while(num > 0)						// set while loop condition
+	     {					
+	       binary[index++] = num%2;			// incorment index by and adds remainder
+	       num = num/2;						// num divided by 2
+	     }
+	     for(int i = index-1;i >= 0;i--)   // assing index -1 to i then decrement it if it is more than 0
+	     {
+	       System.out.print(binary[i]);		// print binary i
+	     }
+	  }
+	public static void main(String[] args)
+	{
+		Scanner console = new Scanner(System.in); // use scanner utility
+		System.out.print("Please choose a Number ");	// print command
+		int Num = console.nextInt();					// assing input to Num
+		toBinary obj = new toBinary();
+		obj.convertBinary(Num);
+		
+	 }
+
+}

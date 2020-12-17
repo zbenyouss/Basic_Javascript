@@ -1,0 +1,27 @@
+
+public class Percent {double percentEven(int[] arr)
+{
+    // check if elements are there
+    if(arr.length==0)
+        return 0;
+
+    int evenCount=0;
+    for(int i=0;i<arr.length;i++)
+    {
+        // check if even
+        if (arr[i] % 2 == 0)
+            evenCount++;
+    }
+
+    // calculate percentage
+    return (double)evenCount/arr.length*100;
+}
+public static void main(String[] args) {
+    // test here
+    int[] arr={6,2,9,11,3};
+    Percent p=new Percent();
+    double percent = p.percentEven(arr);
+    // print the percent
+    System.out.println("The Percent is: "+percent);
+}
+}

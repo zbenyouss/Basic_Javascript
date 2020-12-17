@@ -1,0 +1,42 @@
+import java.util.Scanner; 
+public class CountInRange 
+{
+
+	public static void main(String[] args) 
+{
+		int InRange; 
+		Scanner console = new Scanner(System.in);
+		System.out.println("counting numbers within a range ");  //print statement
+		System.out.print("How many numbers to count ");			//print statement
+int count = console.nextInt();									//call to store next input
+System.out.println("Set Smallest Numbers to be counted ");		//print statement
+int min = console.nextInt();									//call to store next input
+System.out.println("Set Largest Numbers to be counted ");		//print statement
+int max = console.nextInt();									//call to store next input
+
+int [] Data = new int[count];  //array to store the numbers
+for (int i = 0; i < count; i++) 
+	{    // read/store each Number
+    System.out.print("count " + (i + 1) + " : ");
+    Data[i] = console.nextInt();
+    }
+InRange = CountInRange(Data,min,max); // call function
+System.out.println("There are "+InRange+" numbers of elements that fall between " +min+ " and " +max );
+
+}
+public static int CountInRange (int [] Num, int min ,int max)
+{
+	   int count = 0;
+	 
+	   for (int i = 0; i < Num.length; i++) 
+	   {
+	       
+	       if (Num[i] >= min && Num[i] <= max) // compare min and max to numbers in array
+	       {
+	           count++;
+	       }
+	      
+	   }
+	   return count;
+}
+}

@@ -1,0 +1,19 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) 
+		throws FileNotFoundException {
+		Scanner input = new Scanner (new File("file.txt"));
+			
+
+		int wordcount = 0;
+			while (input.hasNext()) {
+			String word = input.next();
+			wordcount++;
+			input = new Scanner (new File("file.txt"));
+			}			
+			
+		System.out.println( "word count: "+ wordcount);
+	}
+	}

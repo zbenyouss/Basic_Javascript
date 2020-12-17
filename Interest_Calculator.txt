@@ -1,0 +1,29 @@
+import java.util.*;
+import java.util.Scanner;
+public class Main
+{
+
+    public static void main(String[] args)
+    {
+  double investment = 1000;
+  double newDeposit = 0;
+  double newBalance;
+  double interestRate = 6.5;
+  double interest;
+  double deposit = 0;
+    System.out.println("Year    Interest      New Deposit        New Balance");
+    System.out.println("*********************************************************");
+
+    for (int i = 1; i <= 25; i++) 
+     {
+        if (i == 1)
+        {
+            newDeposit = investment;
+        }
+        newBalance = newDeposit * Math.pow((1 + (interestRate/100)), 1);
+        interest = newBalance - newDeposit;
+        System.out.printf("%1d    %10.2f   %20.2f    %22.2f \n ", i, interest, newDeposit, newBalance);
+        newDeposit = newBalance + 100;            
+     }    
+    }
+}

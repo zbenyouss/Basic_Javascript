@@ -1,0 +1,67 @@
+import java.util.Scanner;
+
+public class Main
+{
+    
+    public static void main(String[] args) 
+    {
+
+        Scanner s=new Scanner(System.in);
+
+        System.out.println("Enter number of elements in first the array");
+
+        int n=s.nextInt();
+
+        double arr1[]=new double[n];
+
+        System.out.println("Enter numbers");
+
+        for(int i=0;i<n;i++){//for reading array
+            arr1[i]=s.nextInt();
+        }
+        
+        System.out.println("Enter number of elements in the second the array");
+
+        int n1=s.nextInt();
+
+        double arr2[]=new double[n1];
+
+        System.out.println("Enter numbers");
+
+        for(int i=0;i<n1;i++){//for reading array
+            arr2[i]=s.nextInt();
+        }
+        
+        
+		if (isSorted(arr1)) {
+			System.out.println("Array elements are in ascending order");
+		}
+		else {
+			System.out.println("array elements are not in ascending order");
+		}
+		if (isSorted(arr2)) {
+			System.out.println("Array elements are in ascending order");
+		}
+		else {
+			System.out.println("array elements are not in ascending order");
+		}
+    }
+		
+	
+	public static boolean isSorted(double arr[]) {
+		double lastValue = 0.0;
+		int counter = 0;
+		for (double d : arr) {
+			if (counter > 0)
+			{
+				if (lastValue > d) {
+				//not ascending
+					return false;
+				}
+			}
+			lastValue = d;
+			counter ++;
+		}
+		return true;
+	}
+}
